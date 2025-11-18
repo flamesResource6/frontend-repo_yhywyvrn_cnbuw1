@@ -1,71 +1,49 @@
+import React from 'react'
+import Hero from './components/Hero'
+import Modes from './components/Modes'
+import Trust from './components/Trust'
+import Features from './components/Features'
+import Security from './components/Security'
+import Setup from './components/Setup'
+import LiveExamples from './components/LiveExamples'
+import Testimonials from './components/Testimonials'
+import Pricing from './components/Pricing'
+import CTA from './components/CTA'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
-
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
-            </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
+    <div className="min-h-screen bg-slate-950 text-white">
+      {/* Top nav */}
+      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-slate-950/40 border-b border-white/10">
+        <div className="container mx-auto px-6 md:px-10 lg:px-14 h-14 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-indigo-500 via-fuchsia-500 to-cyan-400" />
+            <span className="font-semibold tracking-tight">Echo</span>
           </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
-          </div>
+          <nav className="hidden md:flex items-center gap-6 text-sm text-white/70">
+            <a href="#modes" className="hover:text-white">Modes</a>
+            <a href="#features" className="hover:text-white">Features</a>
+            <a href="#" className="hover:text-white">Security</a>
+            <a href="#" className="hover:text-white">Pricing</a>
+          </nav>
+          <a href="#" className="px-4 py-1.5 rounded-full bg-white text-slate-900 text-sm font-semibold">Invite</a>
         </div>
-      </div>
+      </header>
+
+      <main className="relative">
+        <Hero />
+        <Modes />
+        <Trust />
+        <Features />
+        <Security />
+        <Setup />
+        <LiveExamples />
+        <Testimonials />
+        <Pricing />
+        <CTA />
+      </main>
+
+      <footer className="py-10 text-center text-white/50 text-sm">© {new Date().getFullYear()} Echo</footer>
     </div>
   )
 }
